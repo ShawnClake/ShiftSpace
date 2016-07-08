@@ -1,0 +1,28 @@
+{
+    "name": "Highlight some phrases",
+    "description": "Hightlight some pre defined text from websql database after page loads",
+    "version": "0.1",
+    "permissions": [
+    "tabs","<all_urls>"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+
+    "content_scripts": [
+        {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+        "css": ["libs/css/bootstrap.min.css", "libs/css/font-awesome.min.css", "shiftspace/shift.css"],
+        "js": ["libs/js/jquery.min.js", "libs/js/bootstrap.min.js", "content.js"],
+        "run_at": "document_end"
+        }
+    ], 
+    "background": {
+        "scripts": ["libs/js/jquery.min.js", "shiftspace/button.js"]
+    },
+    "manifest_version":2,
+	"web_accessible_resources": ["shiftspace/*", "libs/*"]
+}
